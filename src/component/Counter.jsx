@@ -1,18 +1,18 @@
-import React, { use } from 'react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react';
 
 function Counter() {
-    const [count, setCount] = React.useState(0);
-    useEffect(() => {
-        console.log({ count });
-    }, [count]);
-    return (
-        <div>
-            <p>count is {count}</p>
-            <button onClick={() => setCount(count + 1)}>Increment</button>
-            <button onClick={() => setCount(count - 1)}>Decrement</button>
-        </div>
-    )
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("tick");
+    }, 1000);
+    
+  
+    return () => {
+      clearInterval(timer);
+      console.log("cleanup");
+    };
+  }, []); 
+  return <div>Counter Component</div>; 
 }
 
-export default Counter
+export default Counter;
