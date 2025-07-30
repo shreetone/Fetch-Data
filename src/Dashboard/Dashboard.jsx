@@ -37,7 +37,7 @@ function Dashboard() {
                             <td>{project.Details}</td>
                             <td>{project.Department}</td>
                             <td>{project.startDate}</td>
-                            <td>{project.endDate}</td>
+                            <td>{project.EndDate}</td>
                             <td>{project.status}</td>
                         </tr>
                     ))}
