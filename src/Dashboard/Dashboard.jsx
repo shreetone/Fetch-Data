@@ -5,12 +5,14 @@ import Table from 'react-bootstrap/Table';
 function Dashboard() {
     const[projects, setProjects] = useState([]);
 
+
     function fetchData() {
         fetch("https://674e84f1635bad45618eebc1.mockapi.io/api/v1/projects")
             .then(response => response.json())
             .then(data => setProjects(data))
             .catch(error => console.error("Error fetching data:", error));
-    }
+            
+    }   
     useEffect(() => {
         fetchData();
     }, []);
